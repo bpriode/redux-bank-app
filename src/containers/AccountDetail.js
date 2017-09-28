@@ -9,12 +9,22 @@ import { Link } from 'react-router-dom';
 
 class AccountDetail extends Component {
   render() {
+    console.log('props', this.props);
   return(
-    <div>
-
+    <div className="col-md-3">
+      <div className= "card">
+        <div className= "card-block">
+          <h4 className= "card-title">Account Information</h4>
+          <h6 className= "card-subtitle mb-2 text-muted">{this.props.account.accountType} account for {this.props.user.name}</h6>
+          <div className= "card-text">
+            <div>Balance: {this.props.account.balance}</div>
+          </div>
+        </div>
+        <Link className="btn btn-primary" to="/users" >Back to Accounts</Link>
+      </div>
     </div>
-  )
-}
+    )
+  }
 }
 
 function mapStateToProps(state) {
