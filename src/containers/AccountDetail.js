@@ -16,11 +16,18 @@ class AccountDetail extends Component {
         <div className= "card-block">
           <h4 className= "card-title">Account Information</h4>
           <h6 className= "card-subtitle mb-2 text-muted">{this.props.account.accountType} account for {this.props.user.name}</h6>
-          <div className= "card-text">
+          <div className= "card-text mb-4">
             <div>Balance: {this.props.account.balance}</div>
           </div>
+          <h6 className='card-subtitle mb-1 text-muted'> Withdraw Amount Below</h6>
+          <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" className="btn btn-primary m-2">$5</button>
+              <button type="button" className="btn btn-success m-2">$10</button>
+              <button type="button" className="btn btn-info m-2">$20</button>
+              <button type="button" className="btn btn-danger m-2">Cancel</button>
+          </div>
         </div>
-        <Link className="btn btn-primary" to="/users" >Back to Accounts</Link>
+        <Link className="btn btn-primary mt-4" to="/users/:id" >Back to Accounts</Link>
       </div>
     </div>
     )
