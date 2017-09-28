@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 class UserDetail extends Component {
 
   render() {
+    console.log('props', this.props);
     if(!this.props.user) {
       return (
         <div>Please select a user...</div>
@@ -20,6 +21,7 @@ class UserDetail extends Component {
     const { id } = this.props.match.params;
     //map over the accounts for the user to create links to them.
     let accounts = this.props.user.accounts.map(account => {
+
 
       //creating a Link with the account type for
       //each account.
@@ -55,26 +57,21 @@ class UserDetail extends Component {
   }
 }
 
+
 function mapStateToProps(state) {
-  return {
-    user: state.selectedUser,
-    account: state.selectedAccount
-  };
+  console.log(state);
+  let user = state.users.filter(oneUser => oneUser._id === state.selectedUser);
+    return {
+      user: user[0]
+    };
 }
 
-
-/*
-
-You will need to create a mapDispatchToProps function here and
-return the action creator selectAccount - HINT: see the UserList
-component.
-
-*/
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
+        selectUser: selectUser,
         selectAccount: selectAccount
     }, dispatch)
 }
 
 
-export default connect(mapStateToProps,  mapDispatchToProps)(UserDetail);
+export default connect(mapStateToProps, mapDispatchToProps)(UserDetail);
