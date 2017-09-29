@@ -18,7 +18,9 @@ export default class BaseLayout extends Component {
                </li>
              </ul>
        </nav>
+       <div className="d-flex justify-content-center">
        {this.props.children}
+       </div>
      </div>
    );
  }

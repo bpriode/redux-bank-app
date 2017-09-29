@@ -13,8 +13,8 @@ import UserList from '../containers/UserList.js';
 class App extends Component {
   render() {
     return (
-      
-        <div className="main">
+
+        <div className="main w-100">
           <div className= "jumbotron">
             <h1 className= "display-3">BankShot</h1>
             <p className= "lead">Your world wide banking leader.</p>

@@ -11,7 +11,7 @@ class UserList extends Component {
     render() {
         let users = this.props.users.map((user) => {
             return (
-                <li key={user._id} className="list-group-item" onClick={() => this.props.selectUser(user._id)}>
+                <li key={user._id} className="list-group-item w-100" onClick={() => this.props.selectUser(user._id)}>
                   <Link to={`/users/${user._id}`}>{user.name}</Link>
                 </li>
             );
@@ -19,7 +19,7 @@ class UserList extends Component {
         return (
             <div>
               <h5>Users with open accounts:</h5>
-              <ul>
+              <ul className='w-100'>
                 {users}
               </ul>
             </div>

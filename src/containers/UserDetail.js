@@ -35,7 +35,7 @@ class UserDetail extends Component {
       )
     })
     return (
-      <div className="col-md-6">
+      <div className="col-md-6 mr-5">
         <div className= "card">
           <div className= "card-block">
             <h4 className= "card-title">Account Information</h4>
